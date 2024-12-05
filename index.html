@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Surpresa Especial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 50px;
+        }
+        h1 {
+            color: #ff6347;
+        }
+        p {
+            font-size: 1.2em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Estamos juntos há <span id="tempo"></span>! ❤️</h1>
+    <p>Agradeço por cada momento ao seu lado. Amo você!</p>
+    <script>
+        // Data do início do relacionamento
+        const dataInicio = new Date(2020, 11, 5); // Substitua pela sua data (ano, mês-1, dia)
+        const hoje = new Date();
+        
+        let anos = hoje.getFullYear() - dataInicio.getFullYear();
+        let meses = hoje.getMonth() - dataInicio.getMonth();
+        let dias = hoje.getDate() - dataInicio.getDate();
+
+        if (dias < 0) {
+            meses -= 1;
+            dias += new Date(hoje.getFullYear(), hoje.getMonth(), 0).getDate();
+        }
+        if (meses < 0) {
+            anos -= 1;
+            meses += 12;
+        }
+
+        document.getElementById('tempo').textContent = `${anos} anos, ${meses} meses e ${dias} dias`;
+    </script>
+</body>
+</html>
